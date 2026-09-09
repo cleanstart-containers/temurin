@@ -6,7 +6,7 @@ The CleanStart Temurin image provides a production-ready, security-hardened cont
 
 **Description:** Security-hardened, minimal base OS designed for enterprise containerized environments.  
 
-**Image Path:** `cleanstart/temurin:latest`  
+**Image Path:** `ghcr.io/cleanstart-containers/temurin`  
 
 **Registry:** Docker Hub  
 
@@ -35,29 +35,29 @@ Typical scenarios where this container excels:
 
 Download the container image from the registry:
 
-    docker pull cleanstart/temurin:latest
-    docker pull cleanstart/temurin:latest-dev
+    docker pull ghcr.io/cleanstart-containers/temurin:latest
+    docker pull ghcr.io/cleanstart-containers/temurin:latest-dev
 
 
 ## Interactive Development
 
 Start interactive session for development:
 
-    docker run -d --name temurin-prod --read-only --security-opt=no-new-privileges --user 1000:1000 cleanstart/temurin:latest
+    docker run -d --name temurin-prod --read-only --security-opt=no-new-privileges --user 1000:1000 ghcr.io/cleanstart-containers/temurin:latest
 
 
 ## Run Hello World
 
 Execute a simple Hello World program:
 
-    docker run --rm -v $(pwd):/app -w /app cleanstart/temurin:latest-dev python --version
+    docker run --rm -v $(pwd):/app -w /app ghcr.io/cleanstart-containers/temurin:latest-dev python --version
 
 
 ## Port Forwarding
 
 Run application with port forwarding:
 
-    docker run -d --name temurin-app -p 8000:8000 -v $(pwd):/app -w /app cleanstart/temurin:latest
+    docker run -d --name temurin-app -p 8000:8000 -v $(pwd):/app -w /app ghcr.io/cleanstart-containers/temurin:latest
 
 
 ## Environment Variables
